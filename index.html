@@ -1,188 +1,219 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pavão semi joia's</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="navbar">
-        <img src="imagens/logo-pavao-removebg-preview.png" alt="logo" class="logo">
-        <nav>
-            <a class="active" href="#home"> Home </a>
-            <a href="#catalog"> Catalogo </a>
-            <a href="#contact"> Contato </a>
-            <a href="#about"> Sobre </a>
-        </nav>
+      <img
+        src="imagens/logo-pavao-removebg-preview.png"
+        alt="logo"
+        class="logo"
+      />
+      <nav>
+        <a class="active" href="#home"> Home </a>
+        <a href="#catalog"> Catalogo </a>
+        <a href="#contact"> Contato </a>
+        <a href="#about"> Sobre </a>
+      </nav>
     </div>
 
     <!-- Slides -->
     <div id="home">
-        <div class="slideshowHome">
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="imagens/kitbrincocolarcapa.png" class="slide-img">
-                <div class="text1">
-                    <p> Teste pg 1</p>
-                    <small> Titlin </small>
-                </div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="imagens/kitbrincocolar.png" class="slide-img">
-                <div class="text2">
-                    <p> Teste pg 2 </p>
-                    <small> Titlin </small>
-                </div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="imagens/modeloc-joias.png" class="slide-img">
-                <div class="text3">
-                    <p> Teste 3 </p>
-                    <small> Titlin </small>
-                </div>
-            </div>
-
-            <a class="prev" onclick="plusSlides(-1)"> &#10094; </a>
-            <a class="next" onclick="plusSlides(1)"> &#10095; </a>
+      <div class="slideshowHome">
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="imagens/kitbrincocolarcapa.png" class="slide-img" />
+          <div class="text1">
+            <p>Teste pg 1</p>
+            <small> Titlin </small>
+          </div>
         </div>
-        <br>
-        <div style="text-align: center;">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="imagens/kitbrincocolar.png" class="slide-img" />
+          <div class="text2">
+            <p>Teste pg 2</p>
+            <small> Titlin </small>
+          </div>
         </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="imagens/modeloc-joias.png" class="slide-img" />
+          <div class="text3">
+            <p>Teste 3</p>
+            <small> Titlin </small>
+          </div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)"> &#10094; </a>
+        <a class="next" onclick="plusSlides(1)"> &#10095; </a>
+      </div>
+      <br />
+      <div style="text-align: center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
     </div>
 
     <!--Catalogo-->
     <div id="catalog" class="catalogo">
-        <h1 class="tituloinicio">JOIAS</h1>
-        <!--div categoria-->
-        <p class="subtitulo-categoria">ESCOLHA POR CATEGORIAS</p>
-        <div class="container-categoria">
-            <!--card aneis-->
-            <a href="#catalog" class="card-categoria filter-btn" data-filter="aneis">
-                <img src="imgcat/aneis.png" alt="aneis">
-                <span class="n-categoria">Anéis e Alianças</span>
-            </a>
-            <!--card brincos-->
-            <a href="#catalog" class="card-categoria filter-btn" data-filter="brincos">
-                <img src="imgcat/brincos.png" alt="brincos">
-                <span class="n-categoria">Brincos</span>
-            </a>
-            <!--card colares-->
-            <a href="#catalog" class="card-categoria filter-btn" data-filter="colares">
-                <img src="imgcat/colares.png" alt="colares">
-                <span class="n-categoria">Colares</span>
-            </a>
-            <!--card pulseiras-->
-            <a href="#catalog" class="card-categoria filter-btn" data-filter="pulseiras">
-                <img src="imgcat/pulseiras.png" alt="pulseiras">
-                <span class="n-categoria">Pulseiras</span>
-            </a>
-            <!--card relogios-->
-            <a href="#catalog" class="card-categoria filter-btn" data-filter="relogios">
-                <img src="imgcat/relogios.jpg" alt="relogioss">
-                <span class="n-categoria">Relógios</span>
-            </a>
-        </div>
-        <!--div select all-->
-        <div><a href="#catalog" class="todos" id="btn-todos">Todos</a>
-        </div>
-        <!--div produtos grid-->
-        <div class="product-grid" id="productGrid">
-        </div>
+      <h1 class="tituloinicio">JOIAS</h1>
+      <!--div categoria-->
+      <p class="subtitulo-categoria">ESCOLHA POR CATEGORIAS</p>
+      <div class="container-categoria">
+        <!--card aneis-->
+        <a
+          href="#catalog"
+          class="card-categoria filter-btn"
+          data-filter="aneis"
+        >
+          <img src="imgcat/aneis.png" alt="aneis" />
+          <span class="n-categoria">Anéis e Alianças</span>
+        </a>
+        <!--card brincos-->
+        <a
+          href="#catalog"
+          class="card-categoria filter-btn"
+          data-filter="brincos"
+        >
+          <img src="imgcat/brincos.png" alt="brincos" />
+          <span class="n-categoria">Brincos</span>
+        </a>
+        <!--card colares-->
+        <a
+          href="#catalog"
+          class="card-categoria filter-btn"
+          data-filter="colares"
+        >
+          <img src="imgcat/colares.png" alt="colares" />
+          <span class="n-categoria">Colares</span>
+        </a>
+        <!--card pulseiras-->
+        <a
+          href="#catalog"
+          class="card-categoria filter-btn"
+          data-filter="pulseiras"
+        >
+          <img src="imgcat/pulseiras.png" alt="pulseiras" />
+          <span class="n-categoria">Pulseiras</span>
+        </a>
+        <!--card relogios-->
+        <a
+          href="#catalog"
+          class="card-categoria filter-btn"
+          data-filter="relogios"
+        >
+          <img src="imgcat/relogios.jpg" alt="relogioss" />
+          <span class="n-categoria">Relógios</span>
+        </a>
+      </div>
+      <!--div select all-->
+      <div><a href="#catalog" class="todos" id="btn-todos">Todos</a></div>
+      <!--div produtos grid-->
+      <div class="product-grid" id="productGrid"></div>
     </div>
-
 
     <!--Contato-->
     <div id="contact" class="contato">
-        <h2 class="texto"> Contato </h2>
-        <p class="texto"> Teste </p>
-        <div>
-            <a href="https://wa.me/5532988745947" target="_blank" class="whatsappfloat">
-                <img src="imagens/zapicon.png" alt="WhatsApp" class="whatsappicon">
-            </a>
-        </div>
+      <h2 class="texto">Contato</h2>
+      <p class="texto">Teste</p>
+      <div>
+        <a href="https://wa.me/000000" target="_blank" class="whatsappfloat">
+          <img src="imagens/zapicon.png" alt="WhatsApp" class="whatsappicon" />
+        </a>
+      </div>
     </div>
 
     <!--About-->
     <div id="about" class="sobre">
-        <h2 class="titulo-sobre">Sobre Nós</h2>
-        <p class="texto-sobre">Somos uma empresa pequena e apaixonada pelo universo das joias, fundada e comandada por
-            Talita
-            Nocelli. Nosso propósito é simples e essencial: oferecer joias de alta qualidade a um preço justo, pensadas
-            para pessoas exigentes que valorizam beleza, autenticidade e durabilidade.
-        </p>
-        <img src="imagens/pavaobck.png" class="pavao-sobre">
-        <div class="penas-pavao">
-            <img src="imagens/Penapav.png">
+      <h2 class="titulo-sobre">Sobre Nós</h2>
+      <p class="texto-sobre">
+        Somos uma empresa pequena e apaixonada pelo universo das joias, fundada
+        e comandada por Talita Nocelli. Nosso propósito é simples e essencial:
+        oferecer joias de alta qualidade a um preço justo, pensadas para pessoas
+        exigentes que valorizam beleza, autenticidade e durabilidade.
+      </p>
+      <img src="imagens/pavaobck.png" class="pavao-sobre" />
+      <div class="penas-pavao">
+        <img src="imagens/Penapav.png" />
+      </div>
+      <div class="sobre-grid">
+        <div class="sobre-item">
+          <h3 class="texto">Nossa Essência</h3>
+          <p class="texto-about">
+            Acreditamos que cada joia carrega uma história e deve refletir a
+            personalidade de quem a usa. Por isso, trabalhamos com dedicação
+            para unir design elegante, materiais selecionados e acabamento
+            impecável.
+          </p>
         </div>
-        <div class="sobre-grid">
-            <div class="sobre-item">
-                <h3 class="texto">Nossa Essência</h3>
-                <p class="texto-about">Acreditamos que cada joia carrega uma história e deve refletir a personalidade de
-                    quem a
-                    usa.
-                    Por isso, trabalhamos com dedicação para unir design elegante, materiais selecionados e acabamento
-                    impecável.</p>
-            </div>
-            <div class="sobre-item">
-                <h3 class="texto">Diferencial</h3>
-                <p class="texto-about">O que nos torna únicos é a proximidade com nossos clientes. Mais do que vender
-                    joias,
-                    buscamos
-                    criar relações de confiança e oferecer uma experiência personalizada, ouvindo e entendendo cada
-                    necessidade.
-                </p>
-            </div>
-            <div class="sobre-item">
-                <h3 class="texto">Missão</h3>
-                <p class="texto-about">Entregar joias que encantem, que sejam acessíveis sem abrir mão da qualidade, e
-                    que
-                    acompanhem
-                    nossos clientes em momentos especiais da vida.</p>
-            </div>
-            <div class="sobre-item">
-                <h3 class="texto">Nossa Visão</h3>
-                <p class="texto-about">Entregar joias que encantem, que sejam acessíveis sem abrir mão da qualidade, e
-                    que
-                    acompanhem
-                    nossos clientes em momentos especiais da vida.</p>
-            </div>
+        <div class="sobre-item">
+          <h3 class="texto">Diferencial</h3>
+          <p class="texto-about">
+            O que nos torna únicos é a proximidade com nossos clientes. Mais do
+            que vender joias, buscamos criar relações de confiança e oferecer
+            uma experiência personalizada, ouvindo e entendendo cada
+            necessidade.
+          </p>
         </div>
+        <div class="sobre-item">
+          <h3 class="texto">Missão</h3>
+          <p class="texto-about">
+            Entregar joias que encantem, que sejam acessíveis sem abrir mão da
+            qualidade, e que acompanhem nossos clientes em momentos especiais da
+            vida.
+          </p>
+        </div>
+        <div class="sobre-item">
+          <h3 class="texto">Nossa Visão</h3>
+          <p class="texto-about">
+            Entregar joias que encantem, que sejam acessíveis sem abrir mão da
+            qualidade, e que acompanhem nossos clientes em momentos especiais da
+            vida.
+          </p>
+        </div>
+      </div>
     </div>
 
     <!--Botões finais de pagina-->
-    <a href="#" class="back-to-top"><img src="imagens/seta-acima.png" class="seta-icone"> </a>
+    <a href="#" class="back-to-top"
+      ><img src="imagens/seta-acima.png" class="seta-icone" />
+    </a>
 
     <!--Footer-->
     <div id="footer" class="rodape">
-        <div>
-            <p> Atendimento </p>
-            <p> Telefone: <a href="https://wa.me/5532988745947" target="_blank">(32) 98874-5947</a> </p>
-            <p><img src="imagens/e-mail.png" class="icones"> <a href="mailto:[EMAIL_ADDRESS]"
-                    target="_blank">[EMAIL_ADDRESS]</a>
-            </p>
-            <p> Atendimento somente virtual</p>
-        </div>
-        <div>
-            <p> Redes Sociais </p>
-            <p> Instagram: <a href="" target="_blank"> @talitasemijoiasjf </a> </p>
-        </div>
+      <div>
+        <p>Atendimento</p>
+        <p>
+          Telefone:
+          <a href="https://wa.me/0000000" target="_blank">(00) 00000-0000</a>
+        </p>
+        <p>
+          <img src="imagens/e-mail.png" class="icones" />
+          <a href="mailto:[EMAIL_ADDRESS]" target="_blank">[EMAIL_ADDRESS]</a>
+        </p>
+        <p>Atendimento somente virtual</p>
+      </div>
+      <div>
+        <p>Redes Sociais</p>
+        <p>Instagram: <a href="" target="_blank"> @talitasemijoiasjf </a></p>
+      </div>
     </div>
     <div class="rodape-final">
-        <p>Todas as marcas registradas mencionadas são de propriedade de seus respectivos donos.</p>
-        <p> @2026 Ync Dragon Entreteriment, Inc. </p>
+      <p>
+        Todas as marcas registradas mencionadas são de propriedade de seus
+        respectivos donos.
+      </p>
+      <p>@2026 Ync Dragon Entreteriment, Inc.</p>
     </div>
-
-</body>
-
+  </body>
 </html>
