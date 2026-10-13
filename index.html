@@ -1,219 +1,400 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pavão semi joia's</title>
+    <title>Pavão Semi Joias</title>
+    <meta
+      name="description"
+      content="Pavão Semi Joias: anéis, alianças, brincos, colares, pulseiras e relógios. Atendimento pelo WhatsApp."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
+    <script>
+      // Marca cedo se pode animar, para os textos já nascerem escondidos e não piscarem
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("movimento");
+      }
+    </script>
     <script src="script.js" defer></script>
   </head>
 
   <body>
-    <div class="navbar">
-      <img
-        src="imagens/logo-pavao-removebg-preview.png"
-        alt="logo"
-        class="logo"
-      />
-      <nav>
-        <a class="active" href="#home"> Home </a>
-        <a href="#catalog"> Catalogo </a>
-        <a href="#contact"> Contato </a>
-        <a href="#about"> Sobre </a>
+    <!-- Desenhos em SVG reutilizados: a pena de pavão e o padrão de fundo -->
+    <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+      <defs>
+        <symbol id="pena" viewBox="-60 -130 120 260" overflow="visible">
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <!-- haste -->
+            <path vector-effect="non-scaling-stroke" d="M0 126 C1 70 -1 10 0 -52" />
+            <!-- contorno -->
+            <path vector-effect="non-scaling-stroke" d="M0 112 C-30 80 -44 10 -40 -50 C-38 -96 -22 -124 0 -126 C22 -124 38 -96 40 -50 C44 10 30 80 0 112" />
+            <!-- olho da pena -->
+            <ellipse vector-effect="non-scaling-stroke" cx="0" cy="-82" rx="22" ry="30" />
+            <ellipse vector-effect="non-scaling-stroke" cx="0" cy="-78" rx="13" ry="19" />
+            <path vector-effect="non-scaling-stroke" d="M0 -62 C-9 -70 -8 -84 0 -90 C8 -84 9 -70 0 -62Z" />
+            <!-- barbas -->
+            <path vector-effect="non-scaling-stroke"
+              d="M0 98 Q-12 88 -22 70 M0 98 Q12 88 22 70
+                 M0 78 Q-17 64 -31 42 M0 78 Q17 64 31 42
+                 M0 56 Q-20 40 -36 14 M0 56 Q20 40 36 14
+                 M0 32 Q-21 14 -38 -16 M0 32 Q21 14 38 -16
+                 M0 8 Q-19 -10 -32 -40 M0 8 Q19 -10 32 -40
+                 M0 -16 Q-14 -30 -24 -50 M0 -16 Q14 -30 24 -50"
+            />
+          </g>
+        </symbol>
+        <pattern id="padrao-penas" width="250" height="300" patternUnits="userSpaceOnUse">
+          <g class="traco-padrao">
+            <use href="#pena" width="96" height="208" transform="translate(75 150) rotate(-16) translate(-48 -104)" />
+            <use href="#pena" width="96" height="208" transform="translate(185 0) rotate(14) translate(-48 -104)" />
+            <use href="#pena" width="96" height="208" transform="translate(185 300) rotate(14) translate(-48 -104)" />
+          </g>
+        </pattern>
+      </defs>
+    </svg>
+
+    <!-- Fundo: penas em linhas finas + brilho que segue o cursor -->
+    <div class="fundo" aria-hidden="true">
+      <svg class="fundo__padrao"><rect width="100%" height="100%" fill="url(#padrao-penas)" /></svg>
+      <div class="fundo__brilho">
+        <svg class="fundo__brilho-padrao"><rect width="100%" height="100%" fill="url(#padrao-penas)" /></svg>
+      </div>
+    </div>
+
+    <header class="navbar">
+      <a href="#home" class="logo-link" aria-label="Pavão Semi Joias, voltar ao início">
+        <img src="imagens/logo-pavao-removebg-preview.png" alt="Logo Pavão Semi Joias" class="logo" />
+      </a>
+      <nav aria-label="Navegação principal">
+        <a class="link-ativo" href="#home">Home</a>
+        <a href="#catalog">Catálogo</a>
+        <a href="#contact">Contato</a>
+        <a href="#about">Sobre</a>
       </nav>
-    </div>
+    </header>
 
-    <!-- Slides -->
-    <div id="home">
-      <div class="slideshowHome">
-        <div class="mySlides fade">
-          <div class="numbertext"></div>
-          <img src="imagens/kitbrincocolarcapa.png" class="slide-img" />
-          <div class="text1">
-            <p>Teste pg 1</p>
-            <small> Titlin </small>
+    <main>
+      <!-- Home -->
+      <section id="home" class="home">
+        <div class="home__texto">
+          <p class="sobretitulo surgir">Semijoias selecionadas por Talita Nocelli</p>
+          <h1 class="home__titulo" data-letras>
+            <span class="linha">Pavão</span>
+            <span class="linha linha--italico">Semi Joias</span>
+          </h1>
+          <!-- TODO: texto da cliente -->
+          <p class="home__chamada surgir" style="--d: 0.6s">
+            Joias de alta qualidade a um preço justo, para quem valoriza beleza,
+            autenticidade e durabilidade.
+          </p>
+          <div class="home__acoes surgir" style="--d: 0.8s">
+            <a href="#catalog" class="botao">Ver catálogo</a>
+            <a href="#contact" class="link-linha">Fale conosco</a>
           </div>
         </div>
 
-        <div class="mySlides fade">
-          <div class="numbertext"></div>
-          <img src="imagens/kitbrincocolar.png" class="slide-img" />
-          <div class="text2">
-            <p>Teste pg 2</p>
-            <small> Titlin </small>
+        <div class="home__vitrine">
+          <!-- Slides -->
+          <div class="slideshowHome" aria-roledescription="carrossel" aria-label="Fotos das coleções">
+            <div class="mySlides ativo">
+              <img src="imagens/kitbrincocolarcapa.png" class="slide-img" alt="Modelo usando colar e pulseira dourados com pingente de coração" />
+              <div class="slide-legenda">
+                <!-- TODO: texto da cliente -->
+                <p>Coleção Afeto</p>
+                <small>Corações cravejados em banho dourado</small>
+              </div>
+            </div>
+
+            <div class="mySlides">
+              <img src="imagens/kitbrincocolar.png" class="slide-img" alt="Mãos segurando estojo com kit de brincos e colar dourados" />
+              <div class="slide-legenda">
+                <!-- TODO: texto da cliente -->
+                <p>Kit Presente</p>
+                <small>Brincos e colar em estojo, prontos para presentear</small>
+              </div>
+            </div>
+
+            <div class="mySlides">
+              <img src="imagens/modeloc-joias.png" class="slide-img" alt="Modelo à beira da piscina usando choker de pérolas e brincos com pedra vermelha" />
+              <div class="slide-legenda">
+                <!-- TODO: texto da cliente -->
+                <p>Coleção Verão</p>
+                <small>Pérolas e pedras vermelhas para dias de sol</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="slides-controles">
+            <p class="slides-contador">
+              <span class="slides-contador-atual">01</span>
+              <span class="slides-contador-total">/ 03</span>
+            </p>
+            <div class="slides-dots">
+              <button class="dot ativo" type="button" data-slide="1" aria-label="Mostrar foto 1"></button>
+              <button class="dot" type="button" data-slide="2" aria-label="Mostrar foto 2"></button>
+              <button class="dot" type="button" data-slide="3" aria-label="Mostrar foto 3"></button>
+            </div>
+            <div class="slides-setas">
+              <button class="prev" type="button" aria-label="Foto anterior">&#8592;</button>
+              <button class="next" type="button" aria-label="Próxima foto">&#8594;</button>
+            </div>
+          </div>
+
+        </div>
+
+        <a href="#detalhes" class="rolar" aria-label="Rolar para os detalhes">
+          <span>Role</span>
+          <span class="rolar__linha"></span>
+        </a>
+      </section>
+
+      <!-- Peça em destaque: a foto fica parada enquanto os cards rolam ao lado -->
+      <section id="detalhes" class="detalhes">
+        <div class="vitrine-fixa">
+          <div class="vitrine-fixa__moldura">
+            <figure class="vitrine-fixa__foto ativo" data-foto="1">
+              <img src="imagens/kitbrincocolar.png" class="recorte recorte--kit" alt="Close do kit de brincos e colar dourados cravejados, sobre veludo preto" />
+            </figure>
+            <figure class="vitrine-fixa__foto" data-foto="2">
+              <img src="imagens/modeloc-joias.png" class="recorte recorte--piscina" alt="Modelo usando choker de pérolas e brincos com pedra vermelha" loading="lazy" />
+            </figure>
+            <figure class="vitrine-fixa__foto" data-foto="3">
+              <img src="imagens/kitbrincocolarcapa.png" class="recorte recorte--coracao" alt="Colar e pulseira dourados com pingente de coração, usados pela modelo" loading="lazy" />
+            </figure>
+            <figure class="vitrine-fixa__foto" data-foto="4">
+              <img src="imagens/kitbrincocolar.png" class="recorte recorte--estojo" alt="Mãos abrindo o estojo de presente com o kit de joias" loading="lazy" />
+            </figure>
+            <span class="vitrine-fixa__reflexo" aria-hidden="true"></span>
+          </div>
+          <p class="vitrine-fixa__legenda" aria-hidden="true">
+            <span class="vitrine-fixa__atual">01</span>
+            <span class="vitrine-fixa__trilho"><span class="vitrine-fixa__progresso"></span></span>
+            <span>04</span>
+          </p>
+        </div>
+
+        <div class="detalhes__conteudo">
+          <div class="detalhes__texto">
+            <p class="sobretitulo surgir">Peça em destaque</p>
+            <!-- TODO: texto da cliente -->
+            <h2 class="titulo-secao" data-letras data-linha>Kit Brinco &amp; Colar</h2>
+            <p class="surgir" style="--d: 0.3s">
+              Brincos e colar cravejados, que combinam o ouro polido com pontos de
+              luz. Um conjunto clássico, para usar junto ou separado.
+            </p>
+            <a href="#catalog" class="link-linha filter-btn surgir" data-filter="colares" style="--d: 0.45s">Ver colares no catálogo</a>
+          </div>
+
+          <!-- TODO: confirmar com a cliente tipo de banho, prazo e condições de garantia -->
+          <ol class="atributos">
+          <li class="atributo" data-foto="1">
+            <span class="atributo__foto" aria-hidden="true">
+              <img src="imagens/kitbrincocolar.png" class="recorte recorte--kit" alt="" loading="lazy" />
+            </span>
+            <span class="atributo__num">01</span>
+            <h3>Banho &amp; acabamento</h3>
+            <p>Banho dourado aplicado com cuidado e acabamento revisado peça a peça, para um brilho uniforme.</p>
+          </li>
+          <li class="atributo" data-foto="2">
+            <span class="atributo__foto" aria-hidden="true">
+              <img src="imagens/modeloc-joias.png" class="recorte recorte--piscina" alt="" loading="lazy" />
+            </span>
+            <span class="atributo__num">02</span>
+            <h3>Hipoalergênico</h3>
+            <p>Peças pensadas para o uso diário, confortáveis inclusive para peles sensíveis.</p>
+          </li>
+          <li class="atributo" data-foto="3">
+            <span class="atributo__foto" aria-hidden="true">
+              <img src="imagens/kitbrincocolarcapa.png" class="recorte recorte--coracao" alt="" loading="lazy" />
+            </span>
+            <span class="atributo__num">03</span>
+            <h3>Garantia</h3>
+            <p>Cada joia acompanha garantia. Consulte as condições pelo WhatsApp.</p>
+          </li>
+          <li class="atributo" data-foto="4">
+            <span class="atributo__foto" aria-hidden="true">
+              <img src="imagens/kitbrincocolar.png" class="recorte recorte--estojo" alt="" loading="lazy" />
+            </span>
+            <span class="atributo__num">04</span>
+            <h3>Embalagem para presente</h3>
+            <p>Entregue em estojo, pronta para presentear em datas especiais.</p>
+          </li>
+          </ol>
+        </div>
+      </section>
+
+      <!--Catalogo-->
+      <section id="catalog" class="catalogo">
+        <div class="catalogo__principal">
+          <h2 class="tituloinicio" data-letras data-linha>JOIAS</h2>
+          <p class="subtitulo-categoria surgir">ESCOLHA POR CATEGORIAS</p>
+          <div class="container-categoria">
+            <!--card aneis-->
+            <a href="#catalog" class="card-categoria filter-btn surgir" data-filter="aneis">
+              <span class="card-categoria__foto">
+                <img src="imgcat/aneis.png" alt="Anel dourado" loading="lazy" />
+              </span>
+              <span class="n-categoria">Anéis e Alianças</span>
+            </a>
+            <!--card brincos-->
+            <a href="#catalog" class="card-categoria filter-btn surgir" data-filter="brincos" style="--d: 0.08s">
+              <span class="card-categoria__foto">
+                <img src="imgcat/brincos.png" alt="Brinco dourado em filigrana com pedra central" loading="lazy" />
+              </span>
+              <span class="n-categoria">Brincos</span>
+            </a>
+            <!--card colares-->
+            <a href="#catalog" class="card-categoria filter-btn surgir" data-filter="colares" style="--d: 0.16s">
+              <span class="card-categoria__foto">
+                <img src="imgcat/colares.png" alt="Colar dourado" loading="lazy" />
+              </span>
+              <span class="n-categoria">Colares</span>
+            </a>
+            <!--card pulseiras-->
+            <a href="#catalog" class="card-categoria filter-btn surgir" data-filter="pulseiras" style="--d: 0.24s">
+              <span class="card-categoria__foto">
+                <img src="imgcat/pulseiras.png" alt="Pulseira dourada" loading="lazy" />
+              </span>
+              <span class="n-categoria">Pulseiras</span>
+            </a>
+            <!--card relogios-->
+            <a href="#catalog" class="card-categoria filter-btn surgir" data-filter="relogios" style="--d: 0.32s">
+              <span class="card-categoria__foto">
+                <img src="imgcat/relogios.jpg" alt="Relógio feminino dourado com mostrador de madrepérola" loading="lazy" />
+              </span>
+              <span class="n-categoria">Relógios</span>
+            </a>
+          </div>
+          <!--div select all-->
+          <div class="todos-wrap"><a href="#catalog" class="todos ativo" id="btn-todos">Todos</a></div>
+          <!--div produtos grid-->
+          <div class="product-grid" id="productGrid"></div>
+        </div>
+      </section>
+
+      <!--Contato-->
+      <section id="contact" class="contato">
+        <svg class="contato__ornamento" viewBox="0 0 120 260" aria-hidden="true">
+          <use href="#pena" />
+        </svg>
+        <h2 class="titulo-secao" data-letras data-linha>Contato</h2>
+        <!-- TODO: texto da cliente -->
+        <p class="surgir" style="--d: 0.3s">
+          Atendimento personalizado e somente virtual. Escolha sua peça e fale com
+          a gente pelo WhatsApp.
+        </p>
+        <a href="https://wa.me/000000" target="_blank" rel="noopener" class="botao surgir" style="--d: 0.45s">Conversar pelo WhatsApp</a>
+        <a href="https://wa.me/000000" target="_blank" rel="noopener" class="whatsappfloat" aria-label="Abrir conversa no WhatsApp">
+          <img src="imagens/zapicon.png" alt="" class="whatsappicon" />
+        </a>
+      </section>
+
+      <!--About-->
+      <section id="about" class="sobre">
+        <!-- Penas desenhadas em SVG (substituem Penapav.png, que não existe) -->
+        <div class="penas-pavao" aria-hidden="true">
+          <svg class="pena-decor pena-decor--esq" viewBox="0 0 120 260"><use href="#pena" /></svg>
+          <svg class="pena-decor pena-decor--dir" viewBox="0 0 120 260"><use href="#pena" /></svg>
+        </div>
+
+        <h2 class="titulo-sobre" data-letras data-linha>Sobre Nós</h2>
+
+        <div class="sobre__intro">
+          <div class="sobre__intro-texto">
+            <img src="imagens/pavaobck.png" class="pavao-sobre" alt="" loading="lazy" />
+            <p class="texto-sobre surgir">
+              Somos uma empresa pequena e apaixonada pelo universo das joias, fundada
+              e comandada por Talita Nocelli. Nosso propósito é simples e essencial:
+              oferecer joias de alta qualidade a um preço justo, pensadas para pessoas
+              exigentes que valorizam beleza, autenticidade e durabilidade.
+            </p>
           </div>
         </div>
 
-        <div class="mySlides fade">
-          <div class="numbertext"></div>
-          <img src="imagens/modeloc-joias.png" class="slide-img" />
-          <div class="text3">
-            <p>Teste 3</p>
-            <small> Titlin </small>
+        <div class="sobre-grid">
+          <div class="sobre-item surgir">
+            <span class="sobre-item__num">I</span>
+            <h3 class="texto">Nossa Essência</h3>
+            <p class="texto-about">
+              Acreditamos que cada joia carrega uma história e deve refletir a
+              personalidade de quem a usa. Por isso, trabalhamos com dedicação
+              para unir design elegante, materiais selecionados e acabamento
+              impecável.
+            </p>
+          </div>
+          <div class="sobre-item surgir" style="--d: 0.12s">
+            <span class="sobre-item__num">II</span>
+            <h3 class="texto">Diferencial</h3>
+            <p class="texto-about">
+              O que nos torna únicos é a proximidade com nossos clientes. Mais do
+              que vender joias, buscamos criar relações de confiança e oferecer
+              uma experiência personalizada, ouvindo e entendendo cada
+              necessidade.
+            </p>
+          </div>
+          <div class="sobre-item surgir">
+            <span class="sobre-item__num">III</span>
+            <h3 class="texto">Missão</h3>
+            <p class="texto-about">
+              Entregar joias que encantem, que sejam acessíveis sem abrir mão da
+              qualidade, e que acompanhem nossos clientes em momentos especiais da
+              vida.
+            </p>
+          </div>
+          <div class="sobre-item surgir" style="--d: 0.12s">
+            <span class="sobre-item__num">IV</span>
+            <h3 class="texto">Nossa Visão</h3>
+            <p class="texto-about">
+              Entregar joias que encantem, que sejam acessíveis sem abrir mão da
+              qualidade, e que acompanhem nossos clientes em momentos especiais da
+              vida.
+            </p>
           </div>
         </div>
-
-        <a class="prev" onclick="plusSlides(-1)"> &#10094; </a>
-        <a class="next" onclick="plusSlides(1)"> &#10095; </a>
-      </div>
-      <br />
-      <div style="text-align: center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-      </div>
-    </div>
-
-    <!--Catalogo-->
-    <div id="catalog" class="catalogo">
-      <h1 class="tituloinicio">JOIAS</h1>
-      <!--div categoria-->
-      <p class="subtitulo-categoria">ESCOLHA POR CATEGORIAS</p>
-      <div class="container-categoria">
-        <!--card aneis-->
-        <a
-          href="#catalog"
-          class="card-categoria filter-btn"
-          data-filter="aneis"
-        >
-          <img src="imgcat/aneis.png" alt="aneis" />
-          <span class="n-categoria">Anéis e Alianças</span>
-        </a>
-        <!--card brincos-->
-        <a
-          href="#catalog"
-          class="card-categoria filter-btn"
-          data-filter="brincos"
-        >
-          <img src="imgcat/brincos.png" alt="brincos" />
-          <span class="n-categoria">Brincos</span>
-        </a>
-        <!--card colares-->
-        <a
-          href="#catalog"
-          class="card-categoria filter-btn"
-          data-filter="colares"
-        >
-          <img src="imgcat/colares.png" alt="colares" />
-          <span class="n-categoria">Colares</span>
-        </a>
-        <!--card pulseiras-->
-        <a
-          href="#catalog"
-          class="card-categoria filter-btn"
-          data-filter="pulseiras"
-        >
-          <img src="imgcat/pulseiras.png" alt="pulseiras" />
-          <span class="n-categoria">Pulseiras</span>
-        </a>
-        <!--card relogios-->
-        <a
-          href="#catalog"
-          class="card-categoria filter-btn"
-          data-filter="relogios"
-        >
-          <img src="imgcat/relogios.jpg" alt="relogioss" />
-          <span class="n-categoria">Relógios</span>
-        </a>
-      </div>
-      <!--div select all-->
-      <div><a href="#catalog" class="todos" id="btn-todos">Todos</a></div>
-      <!--div produtos grid-->
-      <div class="product-grid" id="productGrid"></div>
-    </div>
-
-    <!--Contato-->
-    <div id="contact" class="contato">
-      <h2 class="texto">Contato</h2>
-      <p class="texto">Teste</p>
-      <div>
-        <a href="https://wa.me/000000" target="_blank" class="whatsappfloat">
-          <img src="imagens/zapicon.png" alt="WhatsApp" class="whatsappicon" />
-        </a>
-      </div>
-    </div>
-
-    <!--About-->
-    <div id="about" class="sobre">
-      <h2 class="titulo-sobre">Sobre Nós</h2>
-      <p class="texto-sobre">
-        Somos uma empresa pequena e apaixonada pelo universo das joias, fundada
-        e comandada por Talita Nocelli. Nosso propósito é simples e essencial:
-        oferecer joias de alta qualidade a um preço justo, pensadas para pessoas
-        exigentes que valorizam beleza, autenticidade e durabilidade.
-      </p>
-      <img src="imagens/pavaobck.png" class="pavao-sobre" />
-      <div class="penas-pavao">
-        <img src="imagens/Penapav.png" />
-      </div>
-      <div class="sobre-grid">
-        <div class="sobre-item">
-          <h3 class="texto">Nossa Essência</h3>
-          <p class="texto-about">
-            Acreditamos que cada joia carrega uma história e deve refletir a
-            personalidade de quem a usa. Por isso, trabalhamos com dedicação
-            para unir design elegante, materiais selecionados e acabamento
-            impecável.
-          </p>
-        </div>
-        <div class="sobre-item">
-          <h3 class="texto">Diferencial</h3>
-          <p class="texto-about">
-            O que nos torna únicos é a proximidade com nossos clientes. Mais do
-            que vender joias, buscamos criar relações de confiança e oferecer
-            uma experiência personalizada, ouvindo e entendendo cada
-            necessidade.
-          </p>
-        </div>
-        <div class="sobre-item">
-          <h3 class="texto">Missão</h3>
-          <p class="texto-about">
-            Entregar joias que encantem, que sejam acessíveis sem abrir mão da
-            qualidade, e que acompanhem nossos clientes em momentos especiais da
-            vida.
-          </p>
-        </div>
-        <div class="sobre-item">
-          <h3 class="texto">Nossa Visão</h3>
-          <p class="texto-about">
-            Entregar joias que encantem, que sejam acessíveis sem abrir mão da
-            qualidade, e que acompanhem nossos clientes em momentos especiais da
-            vida.
-          </p>
-        </div>
-      </div>
-    </div>
+      </section>
+    </main>
 
     <!--Botões finais de pagina-->
-    <a href="#" class="back-to-top"
-      ><img src="imagens/seta-acima.png" class="seta-icone" />
+    <a href="#home" class="back-to-top" aria-label="Voltar ao topo">
+      <img src="imagens/seta-acima.png" class="seta-icone" alt="" />
     </a>
 
     <!--Footer-->
-    <div id="footer" class="rodape">
-      <div>
-        <p>Atendimento</p>
-        <p>
-          Telefone:
-          <a href="https://wa.me/0000000" target="_blank">(00) 00000-0000</a>
-        </p>
-        <p>
-          <img src="imagens/e-mail.png" class="icones" />
-          <a href="mailto:[EMAIL_ADDRESS]" target="_blank">[EMAIL_ADDRESS]</a>
-        </p>
-        <p>Atendimento somente virtual</p>
+    <footer id="footer">
+      <div class="rodape">
+        <div>
+          <p class="rodape__titulo">Atendimento</p>
+          <p>
+            Telefone:
+            <a href="https://wa.me/0000000" target="_blank" rel="noopener">(00) 00000-0000</a>
+          </p>
+          <p>
+            <img src="imagens/e-mail.png" class="icones" alt="E-mail" loading="lazy" />
+            <a href="mailto:[EMAIL_ADDRESS]" target="_blank">[EMAIL_ADDRESS]</a>
+          </p>
+          <p>Atendimento somente virtual</p>
+        </div>
+        <div>
+          <p class="rodape__titulo">Redes Sociais</p>
+          <p>
+            Instagram:
+            <a href="https://www.instagram.com/talitasemijoiasjf/" target="_blank" rel="noopener">@talitasemijoiasjf</a>
+          </p>
+        </div>
       </div>
-      <div>
-        <p>Redes Sociais</p>
-        <p>Instagram: <a href="" target="_blank"> @talitasemijoiasjf </a></p>
+      <div class="rodape-final">
+        <p>
+          Todas as marcas registradas mencionadas são de propriedade de seus
+          respectivos donos.
+        </p>
+        <p>@2026 Ync Dragon Entreteriment, Inc.</p>
       </div>
-    </div>
-    <div class="rodape-final">
-      <p>
-        Todas as marcas registradas mencionadas são de propriedade de seus
-        respectivos donos.
-      </p>
-      <p>@2026 Ync Dragon Entreteriment, Inc.</p>
-    </div>
+    </footer>
   </body>
 </html>
